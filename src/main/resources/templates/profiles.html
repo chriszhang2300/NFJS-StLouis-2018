@@ -1,0 +1,19 @@
+<html>
+
+	<head>
+	  <title>Profiles</title>
+	  <link th:href="@{/styles.css}" rel="stylesheet"></link>
+	</head>
+	
+	<body>
+	
+		<h2>All of Your Profiles...</h2>
+	
+		<ul>
+			<li th:each="profile : ${profiles}">
+			  <span th:text="${profile.fullName}">FN</span>
+			</li>
+		</ul>
+	</body>
+
+</html>
