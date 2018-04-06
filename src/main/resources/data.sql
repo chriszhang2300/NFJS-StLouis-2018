@@ -1,0 +1,1 @@
+insert into Profile (username, password, fullName) values ('habuma', 'password', 'Craig Walls');
