@@ -14,15 +14,14 @@ import lombok.RequiredArgsConstructor;
 @NoArgsConstructor(force=true, access=AccessLevel.PRIVATE)
 @RequiredArgsConstructor
 @Entity
-public class Profile {
+public class Book {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	private final String username;
-	private final String password;
-	private final String fullName;
-	private final Boolean enabled;
-	
+	private final String isbn;
+	private final String title;
+	private final String firstName;
+	private final String lastName;
 }

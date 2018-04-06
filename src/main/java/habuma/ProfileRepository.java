@@ -1,11 +1,13 @@
 package habuma;
 
-import org.springframework.data.mongodb.repository.Query;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.QueryByExampleExecutor;
 
 public interface ProfileRepository 
-         extends CrudRepository<Profile, String>,
-         		 ProfileRepositoryExtras {
+         extends CrudRepository<Profile, Long>,
+         		 ProfileRepositoryExtras,
+         		 QueryByExampleExecutor<Profile> {
 	
 	Iterable<Profile> findByPassword(String password);
 	
@@ -15,7 +17,7 @@ public interface ProfileRepository
 	
 	int countByPassword(String p);
 	
-	@Query("{'username':'venkat'}")
+	@Query("from Profile p where p.username='venkat'")
 	Profile findVenkatsProfile();
 	
 }
