@@ -6,6 +6,7 @@ spring:
     show-sql: true
 
 
+
 management:
   endpoints:
     web:
@@ -29,6 +30,9 @@ info:
 
 greeting:
   message: Hiya
+  
+
+  
 ---
 spring:
   profiles: production

@@ -1,5 +1,6 @@
 package habuma;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,11 +11,9 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ProfileUiController {
 	
-	private final ProfileRepository repo;
-
-	@GetMapping("/allProfiles")
-	public String allProfiles(Model model) {
-		model.addAttribute("profiles", repo.findAll());
+	@GetMapping("/ui/profiles/me")
+	public String allProfiles(@AuthenticationPrincipal Profile profile, Model model) {
+		model.addAttribute("profile", profile);
 		return "profiles";
 	}
 	
